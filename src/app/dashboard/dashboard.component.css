@@ -1,0 +1,44 @@
+.tile {
+	border-radius: 8px;
+	width:300px;
+	height:150px;
+	display: inline-table;
+	margin-right: 4px;
+}
+.tile:nth-of-type(1) {
+	margin-left: 4px;
+}
+.tile:hover {
+	width: 310px;
+	height: 160px;
+	cursor: pointer;
+	margin: 0px;
+}
+.tile:not(hover) {
+	margin-top: 4px;
+}
+.dashboard {
+	display: inline-block;
+}
+.link {
+	vertical-align: middle;
+	text-align: center;
+	line-height: 150px;
+	font-size: 150%
+}
+a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+#dict {
+	background-color: #026db2;
+}
+#materials {
+	background-color: #9b599a;
+}
+#test {
+	background-color: #f58025;
+}
+#account {
+	background-color: #8b9f20;
+}

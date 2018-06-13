@@ -12,10 +12,10 @@
 	width: 310px;
 	height: 160px;
 	cursor: pointer;
-	margin: 0px;
+	padding-top:4px;
 }
 .tile:not(hover) {
-	margin-top: 4px;
+	padding-top:0px;
 }
 .dashboard {
 	display: inline-block;
@@ -33,12 +33,12 @@ a {
 #dict {
 	background-color: #026db2;
 }
-#materials {
-	background-color: #9b599a;
-}
-#test {
+#grammar {
 	background-color: #f58025;
 }
-#account {
+#test {
+	background-color: #9b599a;
+}
+#materials {
 	background-color: #8b9f20;
 }

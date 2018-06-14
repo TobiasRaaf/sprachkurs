@@ -13,11 +13,14 @@
 }
 .tab button:hover {
     background-color: #026db2;
+    color: #FFFFFF;
 }
 .tab button.active {
     background-color: #026db2;
+    color: #FFFFFF;
 }
 .tab-content {
     display: none;
     padding: 20% 20%;
+    padding-bottom: 5%;
 }

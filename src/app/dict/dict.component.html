@@ -1,21 +1,23 @@
 <app-dashboard></app-dashboard>
-<ul class="dict">
-	<li *ngFor="let category of categories; let i = index">
-		<button class="categories" (click)="hideShow(i);">{{category.category}}</button>
-		<div class="cat-content">		
-			<p class="voc-header">Deutsch - Englisch</p>
-			<ng-container *ngFor="let entry of entries">
-			<p *ngIf="(category==entry.category)">
-				{{entry.german}} - {{entry.otherLang}}
-			</p>
-			</ng-container>
-		</div>
-	</li>
-</ul>
-<img src="/assets/img/plus.png" alt="Hinzufügen" class="add-overlay-button" (click)="addOverlay();">
+<div class="dict">
+	<ul>
+		<li *ngFor="let category of categories; let i = index">
+			<button class="categories" (click)="hideShow(i);">{{category.category}}</button>
+			<div class="cat-content">		
+				<p class="voc-header">Deutsch - Englisch</p>
+				<ng-container *ngFor="let entry of entries">
+				<p *ngIf="(category==entry.category)">
+					{{entry.german}} - {{entry.otherLang}}
+				</p>
+				</ng-container>
+			</div>
+		</li>
+	</ul>
+	<img src="/assets/img/plus.png" alt="Hinzufügen" class="add-overlay-button" (click)="addOverlay();">
+</div>
 <div id="add-overlay-container">
 	<div id="add-overlay">
 		<p id="close-overlay" (click)="addOverlay();">&#215;</p>
-		<p>Some Text</p>
+		<app-add-form></app-add-form>
 	</div>
 </div>

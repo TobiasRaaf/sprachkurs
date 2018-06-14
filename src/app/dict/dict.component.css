@@ -1,8 +1,11 @@
 .dict {
-	margin-left: 50px;
+	margin-left: 4%;
 }
 li {
 	list-style-type: none;
+}
+ul {
+	padding: 0%;
 }
 .categories {
 	background-color: #026db2;
@@ -21,19 +24,13 @@ li {
 	background-color: #FFFFFF;
 	color: #000000;
 }
-table {
-	padding: 10px;
-	width: 30%;
-	margin-left: 20px;
-}
 .active {
-	margin-left: 20px;
+	margin-left: 2%;
 }
 .active::after {
 	content: '\02212';
 	color: #FFFFFF;
 	float: right;
-	margin-left: 10px;
 }
 .cat-content {
 	display: none;
@@ -43,6 +40,9 @@ table {
 	font-weight: bold;
 	font-size: 125%;
 }
+
+/*Styling of overlay*/
+
 #add-overlay-container {
 	position: fixed;
 	display: none;
@@ -55,21 +55,32 @@ table {
 }
 #add-overlay {
 	position: absolute;
-	top: 25%;
-	left: 25%;
-	height: 50%;
-	width: 50%;
+	display: table-cell;
+	top: 30%;
+	left: 30%;
 	background-color: #FFFFFF;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 4;
+	vertical-align: middle;
+	text-align: center;
+	padding: 1%;
 }
 .add-overlay-button {
-	height: 25px;
-	width: 25px;
+	height: 35px;
+	width: 35px;
 }
+
+/*Styling of Form*/
+
 #close-overlay {
 	float: right;
-	margin: 5px;
+	margin: 1%;
 	cursor: pointer;
 	font-size: 250%;
+	border-radius: 10%;
+	text-align: center;
+	vertical-align: middle;
+}
+#close-overlay:hover {
+	background-color: #DDDDDD;
 }

@@ -44,5 +44,4 @@ export class DictComponent implements OnInit {
 			overlay.style.display = "none";
 		}
 	}
-	
 }

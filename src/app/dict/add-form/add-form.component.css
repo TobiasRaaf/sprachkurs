@@ -1,0 +1,23 @@
+#add-form {
+	display: inline-block;
+	text-align: left;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+.tab button:hover {
+    background-color: #026db2;
+}
+.tab button.active {
+    background-color: #026db2;
+}
+.tab-content {
+    display: none;
+    padding: 20% 20%;
+}

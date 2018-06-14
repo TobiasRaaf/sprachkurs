@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ENTRIES } from '/app/dict/mock-dict';
+import { CATEGORIES } from '/app/dict/mock-categories';
 
 @Component({
   selector: 'app-conjunction',
@@ -7,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConjunctionComponent implements OnInit {
 
+  entries = ENTRIES;
+  categories = CATEGORIES;
+  
   constructor() { }
 
   ngOnInit() {

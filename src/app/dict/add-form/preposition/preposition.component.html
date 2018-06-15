@@ -1,12 +1,30 @@
 <form>
   <div id="case-div" class="label-input-div">
-    <label for="case">Mit Fall:</label>
-	<div id="case-checkbox-div">
-		<input type="checkbox" id="nom"> Nominativ <br>
-		<input type="checkbox" id="gen"> Genitiv <br>
-		<input type="checkbox" id="dat"> Dativ <br>
-		<input type="checkbox" id="akk"> Akkusativ <br>
-	</div>
+    <label for="case" id="checkbox-header">Mit Fall:</label>  
+    <div class="case-checkbox-div" id="checkbox-column-2">
+      <div class="checkbox-div" id="checkbox-div-gen">
+        <label for="gen" class="checkbox-label"> Genitiv
+          <input type="checkbox" id="gen" class="checkbox" (click)="caseChecked('gen')">
+        </label>
+      </div>
+      <div class="checkbox-div" id="checkbox-div-akk">
+        <label for="akk" class="checkbox-label"> Akkusativ
+          <input type="checkbox" id="akk" class="checkbox" (click)="caseChecked('akk')">
+        </label>
+      </div>
+    </div>
+    <div class="case-checkbox-div" id="checkbox-column-1">
+      <div class="checkbox-div" id="checkbox-div-nom">
+        <label for="nom" class="checkbox-label"> Nominativ
+          <input type="checkbox" id="nom" class="checkbox" (click)="caseChecked('nom')">
+        </label>
+      </div>
+      <div class="checkbox-div" id="checkbox-div-dat">
+        <label for="dat" class="checkbox-label"> Dativ
+          <input type="checkbox" id="dat" class="checkbox" (click)="caseChecked('dat')">
+        </label>
+      </div>
+    </div>
   </div>
   <div id="german-div" class="label-input-div">
     <label for="german">Deutsches Wort:</label>

@@ -17,4 +17,16 @@ export class PrepositionComponent implements OnInit {
   ngOnInit() {
   }
 
+  caseChecked(caseString) {
+    var checkBox = document.getElementById(caseString) as HTMLInputElement;
+
+    var label = document.getElementById("checkbox-div-"+caseString);
+
+    if(checkBox.checked == true){
+      label.classList.add("checked");
+    }
+    else{
+      label.className.replace(" checked", "");
+    }
+  }
 }

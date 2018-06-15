@@ -2,6 +2,7 @@
     <div class="tab">
         <button id="tab-nomen" class="tab-categories" (click)="showCategoryMask(event, 'nomen')">Nomen</button>
         <button id="tab-verb" class="tab-categories" (click)="showCategoryMask(event, 'verb')">Verb</button>
+        <button id="tab-adjective" class="tab-categories" (click)="showCategoryMask(event, 'adjective')">Adjektiv</button>
         <button id="tab-conjunction" class="tab-categories" (click)="showCategoryMask(event, 'conjunction')">Konjunktion</button>
         <button id="tab-preposition" class="tab-categories" (click)="showCategoryMask(event, 'preposition')">Präposition</button>
         <button id="tab-others" class="tab-categories" (click)="showCategoryMask(event, 'others')">Sonstiges</button>     
@@ -11,6 +12,9 @@
     </div>
     <div id="verb" class="tab-content">
       <app-verb></app-verb>
+    </div>
+    <div id="adjective" class="tab-content">
+      <app-adjective></app-adjective>
     </div>
     <div id="conjunction" class="tab-content">
       <app-conjunction></app-conjunction>

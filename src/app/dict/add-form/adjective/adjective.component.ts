@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ENTRIES } from '../../mock-dict';
+import { CATEGORIES } from '../../mock-categories';
 
 @Component({
   selector: 'app-adjective',
@@ -12,4 +14,6 @@ export class AdjectiveComponent implements OnInit {
   ngOnInit() {
   }
 
+  entries = ENTRIES;
+  categories = CATEGORIES;
 }

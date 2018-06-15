@@ -1,3 +1,23 @@
-<p>
-  adjective works!
-</p>
+<form>
+  <div id="german-div" class="label-input-div">
+    <label for="german">Deutsches Wort:</label>
+    <input type="text" id="german">
+  </div>
+  <div id="otherLang-div" class="label-input-div">
+    <label for="otherLang">Übersetzung:</label>
+    <input type="text" id="otherLang">
+  </div>
+  <div id="category-div" class="label-input-div">
+    <label for="category">Kategorie:</label>
+    <select id="category">
+      <option *ngFor="let category of categories"
+          [value]="category.category">
+        {{category.category}}
+      </option>
+    </select>
+  </div>
+  <div id="submit-div" class="label-input-div">
+    <label for="submit"></label>
+    <input type="submit" id="submit" value="Absenden">
+  </div>
+</form>

@@ -24,11 +24,13 @@ export class DictComponent implements OnInit {
 	}
 		
 	getEntries(): void {
-		this.entries = this.entryService.getEntries();
+		this.entryService.getEntries()
+		.subscribe(entries => this.entries = entries);
 	};
 
 	getCategories(): void {
-		this.categories = this.entryService.getCategories();
+		this.entryService.getCategories()
+		.subscribe(categories => this.categories = categories);
 	};
 
 	hideShow(i: number) {

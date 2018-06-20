@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
 import { DictEntry } from './dict/dictEntry';
 import { DictCategory } from './dict/dictCategory';
 import { ENTRIES } from './dict/mock-dict';
@@ -11,11 +13,11 @@ export class EntryService {
 
   constructor() { }
 
-  getEntries(): DictEntry[] {
-    return ENTRIES;
+  getEntries(): Observable<DictEntry[]> {
+    return of(ENTRIES);
   };
 
-  getCategories(): DictCategory[] {
-    return CATEGORIES;
+  getCategories(): Observable<DictCategory[]> {
+    return of(CATEGORIES);
   };
 }

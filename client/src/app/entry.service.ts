@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Http, HttpModule } from '@angular/http';
 
 import { DictEntry } from './dict/dictEntry';
 import { DictCategory } from './dict/dictCategory';
@@ -11,13 +13,15 @@ import { CATEGORIES } from './dict/mock-categories';
 })
 export class EntryService {
 
-  constructor() { }
+  url = "http://localhost:8080/api/entry/all"
+
+  constructor( private http: HttpClient ) { }
 
   getEntries(): Observable<DictEntry[]> {
-    return of(ENTRIES);
+    return this.http.get<DictEntry[]>(this.url);
   };
 
   getCategories(): Observable<DictCategory[]> {
-    return of(CATEGORIES);
+    return this.http.get<DictCategory[]>(this.url);
   };
 }

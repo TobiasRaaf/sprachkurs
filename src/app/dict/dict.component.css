@@ -66,8 +66,12 @@ ul {
 	padding: 1%;
 }
 .add-overlay-button {
-	height: 35px;
-	width: 35px;
+	height: 50px;
+	width: 50px;
+	position: fixed;
+	bottom: 5%;
+	left: 50%;
+	z-index: 1;
 }
 
 /*Styling of Form*/

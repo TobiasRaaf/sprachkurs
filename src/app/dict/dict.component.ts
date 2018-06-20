@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DictEntry } from './dictEntry';
 import { DictCategory } from './dictCategory';
-import { ENTRIES } from './mock-dict';
-import { CATEGORIES } from './mock-categories';
+import { EntryService } from '../entry.service';
 
 @Component({
   selector: 'app-dict',
@@ -11,18 +10,27 @@ import { CATEGORIES } from './mock-categories';
 })
 export class DictComponent implements OnInit {
 	
-	entries = ENTRIES;
-	categories = CATEGORIES;
+	entries: DictEntry[];
+	categories: DictCategory[];
 	
 	collButtons = document.getElementsByClassName("categories");
 	index = 0;
 
-  	constructor() { }
+  	constructor(private entryService: EntryService) { }
 
 	ngOnInit() {
-			
+		this.getCategories();
+		this.getEntries();
 	}
 		
+	getEntries(): void {
+		this.entries = this.entryService.getEntries();
+	};
+
+	getCategories(): void {
+		this.categories = this.entryService.getCategories();
+	};
+
 	hideShow(i: number) {
 		var element = document.getElementsByClassName("categories")[i];
 		element.classList.toggle("active");

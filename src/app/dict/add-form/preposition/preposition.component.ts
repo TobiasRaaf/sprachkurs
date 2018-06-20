@@ -18,15 +18,13 @@ export class PrepositionComponent implements OnInit {
   }
 
   caseChecked(caseString) {
-    var checkBox = document.getElementById(caseString) as HTMLInputElement;
-
     var label = document.getElementById("checkbox-div-"+caseString);
 
-    if(checkBox.checked == true){
-      label.classList.add("checked");
+    if(label.classList.contains("checked")){
+      label.classList.remove("checked");
     }
     else{
-      label.className.replace(" checked", "");
+      label.classList.add("checked");
     }
   }
 }

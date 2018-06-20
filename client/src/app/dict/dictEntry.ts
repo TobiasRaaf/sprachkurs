@@ -1,7 +1,8 @@
 import { DictCategory } from './dictCategory';
 
 export interface DictEntry {
-		german: string;
-		otherLang: string;
-		category: DictCategory;
+	id: string;
+	german: string;
+	otherLang: string;
+	category: DictCategory;
 }

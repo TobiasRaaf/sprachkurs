@@ -1,3 +1,4 @@
 export interface DictCategory {
-		category: string;
+	id: string;
+	category: string;
 }

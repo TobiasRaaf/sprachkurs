@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ENTRIES } from '../../mock-dict';
-import { CATEGORIES } from '../../mock-categories';
+import { DictEntry } from '../../dictEntry'
+import { DictCategory } from '../../dictCategory';
+import { EntryService } from '../../../entry.service';
 
 @Component({
   selector: 'app-conjunction',
@@ -9,12 +10,23 @@ import { CATEGORIES } from '../../mock-categories';
 })
 export class ConjunctionComponent implements OnInit {
 
-  entries = ENTRIES;
-  categories = CATEGORIES;
+	entries: DictEntry[];
+  categories: DictCategory[];
   
-  constructor() { }
+  constructor(private entryService: EntryService) { }
 
   ngOnInit() {
+		this.getCategories();
+		this.getEntries();
   }
+	
+	getEntries(): void {
+		this.entryService.getEntries()
+		.subscribe(entries => this.entries = entries);
+	};
 
+	getCategories(): void {
+		this.entryService.getCategories()
+		.subscribe(categories => this.categories = categories);
+  };
 }

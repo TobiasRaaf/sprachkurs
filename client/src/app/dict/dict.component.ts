@@ -30,7 +30,9 @@ export class DictComponent implements OnInit {
 
 	getCategories(): void {
 		this.entryService.getCategories()
-		.subscribe(categories => this.categories = categories);
+		.subscribe(categories => 
+			this.categories = categories
+		);
 	};
 
 	hideShow(i: number) {

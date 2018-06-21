@@ -1,13 +1,13 @@
 <app-dashboard></app-dashboard>
 <div class="dict">
 	<ul>
-		<li *ngFor="let category of categories; let i = index">
-			<button class="categories" (click)="hideShow(i);">{{category.category}}</button>
+		<li *ngFor="let category of categories| keys; let i = index">
+			<button class="categories" (click)="hideShow(i);">{{category.value.name}}</button>
 			<div class="cat-content">		
 				<p class="voc-header">Deutsch - Englisch</p>
-				<ng-container *ngFor="let entry of entries">
-				<p *ngIf="(category==entry.category)">
-					{{entry.german}} - {{entry.otherLang}}
+				<ng-container *ngFor="let entry of entries| keys">
+				<p *ngIf="(category.value.name==entry.value.category.name)">
+					{{entry.value.german}} - {{entry.value.otherLang}}
 				</p>
 				</ng-container>
 			</div>

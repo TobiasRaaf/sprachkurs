@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ENTRIES } from '../../mock-dict';
-import { CATEGORIES } from '../../mock-categories';
+import { DictEntry } from '../../dictEntry'
+import { DictCategory } from '../../dictCategory';
+import { EntryService } from '../../../entry.service';
 
 @Component({
   selector: 'app-adjective',
@@ -9,11 +10,23 @@ import { CATEGORIES } from '../../mock-categories';
 })
 export class AdjectiveComponent implements OnInit {
 
-  constructor() { }
+	entries: DictEntry[];
+  categories: DictCategory[];
+  
+  constructor(private entryService: EntryService) { }
 
   ngOnInit() {
+		this.getCategories();
+		this.getEntries();
   }
+	
+	getEntries(): void {
+		this.entryService.getEntries()
+		.subscribe(entries => this.entries = entries);
+	};
 
-  entries = ENTRIES;
-  categories = CATEGORIES;
+	getCategories(): void {
+		this.entryService.getCategories()
+		.subscribe(categories => this.categories = categories);
+	};
 }

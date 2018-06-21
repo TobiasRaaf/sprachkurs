@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,6 +17,7 @@ import { PrepositionComponent } from './dict/add-form/preposition/preposition.co
 import { ConjunctionComponent } from './dict/add-form/conjunction/conjunction.component';
 import { AdjectiveComponent } from './dict/add-form/adjective/adjective.component';
 import { OthersComponent } from './dict/add-form/others/others.component';
+import { KeysPipe } from './dict/entry.pipe';
 
 @NgModule({
   declarations: [
@@ -33,8 +35,10 @@ import { OthersComponent } from './dict/add-form/others/others.component';
     ConjunctionComponent,
     AdjectiveComponent,
     OthersComponent,
+    KeysPipe
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],

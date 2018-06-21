@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ENTRIES } from '../../mock-dict';
-import { CATEGORIES } from '../../mock-categories';
+import { DictEntry } from '../../dictEntry'
+import { DictCategory } from '../../dictCategory';
+import { EntryService } from '../../../entry.service';
 
 @Component({
   selector: 'app-preposition',
@@ -9,14 +10,26 @@ import { CATEGORIES } from '../../mock-categories';
 })
 export class PrepositionComponent implements OnInit {
 
-  entries = ENTRIES;
-  categories = CATEGORIES;
   
-  constructor() { }
+	entries: DictEntry[];
+  categories: DictCategory[];
+  
+  constructor(private entryService: EntryService) { }
 
   ngOnInit() {
+		this.getCategories();
+		this.getEntries();
   }
+	
+	getEntries(): void {
+		this.entryService.getEntries()
+		.subscribe(entries => this.entries = entries);
+	};
 
+	getCategories(): void {
+		this.entryService.getCategories()
+		.subscribe(categories => this.categories = categories);
+	};
   caseChecked(caseString) {
     var label = document.getElementById("checkbox-div-"+caseString);
 

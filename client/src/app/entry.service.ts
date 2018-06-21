@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Http, HttpModule } from '@angular/http';
 
 import { DictEntry } from './dict/dictEntry';
 import { DictCategory } from './dict/dictCategory';
-import { ENTRIES } from './dict/mock-dict';
-import { CATEGORIES } from './dict/mock-categories';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EntryService {
 
-  url = "http://localhost:8080/api/entry/all"
+  private entriesUrl = "http://localhost:8080/api/entry/all";
+  private categoriesUrl = "http://localhost:8080/api/category/all";
 
   constructor( private http: HttpClient ) { }
 
   getEntries(): Observable<DictEntry[]> {
-    return this.http.get<DictEntry[]>(this.url);
+    return this.http.get<DictEntry[]>(this.entriesUrl);
   };
 
   getCategories(): Observable<DictCategory[]> {
-    return this.http.get<DictCategory[]>(this.url);
+    return this.http.get<DictCategory[]>(this.categoriesUrl);
   };
 }

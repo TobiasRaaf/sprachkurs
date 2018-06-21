@@ -24,9 +24,9 @@
   <div id="category-div" class="label-input-div">
     <label for="category">Kategorie:</label>
     <select id="category">
-      <option *ngFor="let category of categories"
-          [value]="category.category">
-        {{category.category}}
+      <option *ngFor="let category of categories| keys"
+          [value]="category.value.name">
+        {{category.value.name}}
       </option>
     </select>
   </div>

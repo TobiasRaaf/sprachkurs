@@ -1,9 +1,18 @@
-package com.sprachkurskonzept.app;
+package com.sprachkurskonzept.app.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Entry {
 
+    @Id @GeneratedValue
+    private Long id;
     private String german;
     private String otherLang;
+    @OneToOne
     private Category category;
 
     public Entry() {

@@ -2,6 +2,7 @@
   <div id="genus-div" class="label-input-div">
       <label for="genus">Artikel:</label>
       <select id="genus">
+        <option disabled selected value> Artikel wählen </option>
         <option value="maskulin">
           Der
         </option>
@@ -24,6 +25,7 @@
   <div id="category-div" class="label-input-div">
     <label for="category">Kategorie:</label>
     <select id="category">
+      <option disabled selected value> Kategorie wählen </option>
       <option *ngFor="let category of categories| keys"
           [value]="category.value.name">
         {{category.value.name}}

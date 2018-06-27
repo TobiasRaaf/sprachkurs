@@ -1,19 +1,14 @@
 package com.sprachkurskonzept.app.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Entry {
 
-    @Id @GeneratedValue
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long entryId;
     private String german;
     private String otherLang;
-    @OneToOne
-    private Category category;
 
     public Entry() {
     }
@@ -21,15 +16,6 @@ public class Entry {
     public Entry(String german, String otherLang, Category category) {
         this.german = german;
         this.otherLang = otherLang;
-        this.category = category;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
     }
 
     public String getOtherLang() {
@@ -55,7 +41,6 @@ public class Entry {
         return "Entry{" +
                 "german='" + german + '\'' +
                 ", otherLang='" + otherLang + '\'' +
-                ", category=" + category +
                 '}';
     }
 }

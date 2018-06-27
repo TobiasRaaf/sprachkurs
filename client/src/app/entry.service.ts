@@ -11,8 +11,8 @@ import { DictCategory } from './dict/dictCategory';
 })
 export class EntryService {
 
-  private entriesUrl = "http://localhost:8080/api/entry/all";
-  private categoriesUrl = "http://localhost:8080/api/category/all";
+  private entriesUrl = "http://localhost:8080/db/allEntries";
+  private categoriesUrl = "http://localhost:8080/db/allCategories";
 
   constructor( private http: HttpClient ) { }
 

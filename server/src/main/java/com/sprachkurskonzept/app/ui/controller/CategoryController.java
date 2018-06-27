@@ -1,33 +1,33 @@
 package com.sprachkurskonzept.app.ui.controller;
 
+import com.sprachkurskonzept.app.repository.CategoryRepository;
 import com.sprachkurskonzept.app.entity.Category;
-import com.sprachkurskonzept.app.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/category")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/db")
 public class CategoryController {
+    @Autowired
+    private CategoryRepository categoryRepository;
 
-    @Autowired(required = true)
-    @Qualifier("categoryService")
-    private CategoryService categoryService;
-
-    @GetMapping("/")
-    public String getHome(){
-        return "redirect:categories.action";
+    @GetMapping(path="/addCategory")
+    public @ResponseBody String addNewCategory (@RequestParam String name) {
+        Category category = new Category();
+        category.setName(name);
+        categoryRepository.save(category);
+        return "Saved";
     }
-    @GetMapping("/categories")
-    public ModelAndView getCategories(){
-        ModelAndView model = new ModelAndView("categories");
-        List<Category> list = categoryService.getAllCategories();
-        model.addObject("categories", list);
-        return model;
+
+    @GetMapping(path="/allCategories")
+    public @ResponseBody Iterable<Category> getAllCategories() {
+        return categoryRepository.findAll();
+    }
+
+    @GetMapping(path="/findCategory")
+    public @ResponseBody Category findCategory(@RequestParam String name) {
+        return categoryRepository.findByName(name);
     }
 }

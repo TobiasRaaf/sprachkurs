@@ -1,15 +1,15 @@
 <form>
   <div id="german-div" class="label-input-div">
-    <label for="german">Deutsches Wort:</label>
-    <input type="text" id="german">
+    <label for="germanAdj">Deutsches Wort:</label>
+    <input type="text" id="germanAdj">
   </div>
   <div id="otherLang-div" class="label-input-div">
-    <label for="otherLang">Übersetzung:</label>
-    <input type="text" id="otherLang">
+    <label for="otherLangAdj">Übersetzung:</label>
+    <input type="text" id="otherLangAdj">
   </div>
   <div id="category-div" class="label-input-div">
     <label for="category">Kategorie:</label>
-    <select id="category">
+    <select id="categoryAdj">
       <option disabled selected value> Kategorie wählen </option>
       <option *ngFor="let category of categories| keys"
           [value]="category.value.name">

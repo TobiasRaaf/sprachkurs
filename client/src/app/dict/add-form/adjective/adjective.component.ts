@@ -29,4 +29,8 @@ export class AdjectiveComponent implements OnInit {
 		this.entryService.getCategories()
 		.subscribe(categories => this.categories = categories);
 	};
+	
+	submit(): void {
+		this.entryService.submit("Adj", null, null);
+	}
 }

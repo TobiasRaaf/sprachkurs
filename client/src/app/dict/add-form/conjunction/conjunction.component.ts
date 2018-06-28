@@ -28,5 +28,9 @@ export class ConjunctionComponent implements OnInit {
 	getCategories(): void {
 		this.entryService.getCategories()
 		.subscribe(categories => this.categories = categories);
-  };
+	};
+	
+	submit(): void {
+		this.entryService.submit("Con", null, null);
+	}
 }

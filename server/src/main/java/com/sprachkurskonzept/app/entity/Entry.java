@@ -9,6 +9,19 @@ public class Entry {
     private Long entryId;
     private String german;
     private String otherLang;
+    @OneToOne
+    private Category category;
+    private String withCase;
+    private String verbtype;
+    private String article;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Entry() {
     }
@@ -41,6 +54,31 @@ public class Entry {
         return "Entry{" +
                 "german='" + german + '\'' +
                 ", otherLang='" + otherLang + '\'' +
+                ", category='" + category + '\''+
                 '}';
+    }
+
+    public String getWithCase() {
+        return withCase;
+    }
+
+    public void setWithCase(String withCase) {
+        this.withCase = withCase;
+    }
+
+    public String getVerbtype() {
+        return verbtype;
+    }
+
+    public void setVerbtype(String verbtype) {
+        this.verbtype = verbtype;
+    }
+
+    public String getArticle() {
+        return article;
+    }
+
+    public void setArticle(String article) {
+        this.article = article;
     }
 }

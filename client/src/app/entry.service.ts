@@ -13,6 +13,8 @@ export class EntryService {
 
   private entriesUrl = "http://localhost:8080/db/allEntries";
   private categoriesUrl = "http://localhost:8080/db/allCategories";
+  private entrySaveUrl = "http://localhost:8080/db/addEntry";
+  private categorySaveUrl= "http://localhost:8080/db/addCategory";
 
   constructor( private http: HttpClient ) { }
 
@@ -23,4 +25,26 @@ export class EntryService {
   getCategories(): Observable<DictCategory[]> {
     return this.http.get<DictCategory[]>(this.categoriesUrl);
   };
+  submit(idSuffix, type, optional) {
+    var german = (<HTMLInputElement>document.getElementById("german"+idSuffix)).value;
+    var otherLang = (<HTMLInputElement>document.getElementById("otherLang"+idSuffix)).value;
+    var category = (<HTMLSelectElement>document.getElementById("category"+idSuffix)).value;
+    var xhr = new XMLHttpRequest();
+    if(type == null){
+      xhr.open('POST', this.entrySaveUrl+'?german='+german+'&otherLang='+otherLang+'&categoryName='+category);
+    }
+    else{
+      xhr.open('POST', this.entrySaveUrl+'?german='+german+'&otherLang='+otherLang+'&categoryName='+category+'&'+type+'='+optional)
+    }
+    xhr.withCredentials = true;
+    xhr.onload = function(){
+      if (xhr.status === 200){
+        alert("success");
+      }
+      else {
+        alert("error");
+      }
+    };
+    xhr.send();
+  }
 }

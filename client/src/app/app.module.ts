@@ -18,6 +18,7 @@ import { ConjunctionComponent } from './dict/add-form/conjunction/conjunction.co
 import { AdjectiveComponent } from './dict/add-form/adjective/adjective.component';
 import { OthersComponent } from './dict/add-form/others/others.component';
 import { KeysPipe } from './dict/entry.pipe';
+import { CategoryComponent } from './dict/add-form/category/category.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { KeysPipe } from './dict/entry.pipe';
     ConjunctionComponent,
     AdjectiveComponent,
     OthersComponent,
-    KeysPipe
+    KeysPipe,
+    CategoryComponent
   ],
   imports: [
     HttpClientModule,

@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-
 @Controller
 @RequestMapping(path="/db")
 public class EntryController {
@@ -19,10 +18,13 @@ public class EntryController {
     private CategoryController categoryController;
 
     @RequestMapping(path="/addEntry")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     public @ResponseBody String addNewEntry (@RequestParam String german, @RequestParam String otherLang,
                                              @RequestParam String categoryName, @RequestParam(required = false) String type,
                                              @RequestParam(required = false) String optional) {
+        if(findByGerman(german)!= null){
+            return null;
+        }
         Entry entry = new Entry();
         entry.setGerman(german);
         entry.setOtherLang(otherLang);
@@ -51,17 +53,17 @@ public class EntryController {
     }
 
     @GetMapping(path="/allEntries")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     public @ResponseBody Iterable<Entry> getAllEntries() {
         return entryRepository.findAll();
     }
     @GetMapping(path="/findGerman")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     public @ResponseBody Entry findByGerman(@RequestParam String german) {
         return entryRepository.findByGerman(german);
     }
     @GetMapping(path="/findOtherLang")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     public @ResponseBody Entry findByOtherLang(@RequestParam String otherLang) {
         return entryRepository.findByOtherLang(otherLang);
     }

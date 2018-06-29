@@ -24,10 +24,10 @@ ul {
 	background-color: #FFFFFF;
 	color: #000000;
 }
-.active {
+.categories.active {
 	margin-left: 2%;
 }
-.active::after {
+.categories.active::after {
 	content: '\02212';
 	color: #FFFFFF;
 	float: right;
@@ -73,7 +73,29 @@ ul {
 	left: 50%;
 	z-index: 1;
 }
-
+.section button {
+	background-color: inherit;
+	float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+.section button:hover {
+    background-color: #026db2;
+    color: #FFFFFF;
+}
+.section button.active {
+    background-color: #026db2;
+    color: #FFFFFF;
+}
+#category-form {
+	display: none;
+}
+#entry-form {
+	display: block;
+}
 /*Styling of Form*/
 
 #close-overlay {

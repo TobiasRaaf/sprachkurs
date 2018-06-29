@@ -7,26 +7,31 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @RequestMapping("/db")
 public class CategoryController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @GetMapping(path="/addCategory")
+    @RequestMapping(path="/addCategory")
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     public @ResponseBody String addNewCategory (@RequestParam String name) {
-        Category category = new Category();
-        category.setName(name);
-        categoryRepository.save(category);
-        return "Saved";
+        if(findCategory(name)== null) {
+            Category category = new Category();
+            category.setName(name);
+            categoryRepository.save(category);
+            return "Saved";
+        }
+        return null;
     }
 
-    @GetMapping(path="/allCategories")
+    @RequestMapping(path="/allCategories")
+    @CrossOrigin(origins = "http://localhost:4200")
     public @ResponseBody Iterable<Category> getAllCategories() {
         return categoryRepository.findAll();
     }
 
-    @GetMapping(path="/findCategory")
+    @RequestMapping(path="/findCategory")
+    @CrossOrigin(origins = "http://localhost:4200")
     public @ResponseBody Category findCategory(@RequestParam String name) {
         return categoryRepository.findByName(name);
     }

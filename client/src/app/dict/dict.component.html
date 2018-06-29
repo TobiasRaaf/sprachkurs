@@ -17,7 +17,14 @@
 </div>
 <div id="add-overlay-container">
 	<div id="add-overlay">
-		<p id="close-overlay" (click)="addOverlay();">&#215;</p>
-		<app-add-form></app-add-form>
+		<div id="form-header">
+			<div class="section">
+				<button class="section-button" id="category-button" (click)="showRelevantForm(event, 'category')">Kategorie</button>
+				<button class="section-button active" id="entry-button" (click)="showRelevantForm(event, 'entry')">Eintrag</button>
+			</div>
+			<p id="close-overlay" (click)="addOverlay();">&#215;</p>
+		</div>
+		<app-category class="section-content" id="category-form"></app-category>
+		<app-add-form class="section-content" id="entry-form"></app-add-form>
 	</div>
 </div>

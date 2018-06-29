@@ -56,4 +56,20 @@ export class DictComponent implements OnInit {
 			overlay.style.display = "none";
 		}
 	}
+	showRelevantForm(event, sectionName) {
+		var i, masks, sectionButtons;
+
+		masks = document.getElementsByClassName("section-content");
+		for (i = 0; i < masks.length; i++) {
+			masks[i].style.display = "none";
+		}
+
+		sectionButtons = document.getElementsByClassName("section-button");
+		for (i = 0; i < sectionButtons.length; i++) {
+			sectionButtons[i].className = sectionButtons[i].className.replace(" active", "");
+		}
+
+		document.getElementById(sectionName+"-form").style.display = "block";
+		document.getElementById(sectionName+"-button").classList.add("active");
+	}
 }

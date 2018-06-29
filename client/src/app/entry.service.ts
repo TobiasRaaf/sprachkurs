@@ -47,4 +47,17 @@ export class EntryService {
     };
     xhr.send();
   }
+  submitCategory() {
+    var categoryName = (<HTMLInputElement>document.getElementById("categoryName")).value;
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', this.categorySaveUrl+'?name='+categoryName);
+    xhr.withCredentials = true;
+    xhr.onload = function(){
+      if (xhr.status === 200){
+      }
+      else {
+      }
+    };
+    xhr.send();
+  }
 }

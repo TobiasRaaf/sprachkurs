@@ -33,13 +33,16 @@ public class EntryController {
         }
         entry.setCategory(category);
         if(type != null) {
-            switch (type) {
+            switch (type.toLowerCase()) {
                 case "nomen":
                     entry.setArticle(optional);
+                    break;
                 case "verb":
                     entry.setVerbtype(optional);
+                    break;
                 case "preposition":
                     entry.setWithCase(optional);
+                    break;
             }
         }
         entryRepository.save(entry);

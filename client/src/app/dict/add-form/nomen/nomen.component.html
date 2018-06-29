@@ -1,7 +1,7 @@
 <form>
   <div id="genus-div" class="label-input-div">
-      <label for="genus">Artikel:</label>
-      <select id="genus">
+      <label for="genusNom">Artikel:</label>
+      <select id="genusNom">
         <option disabled selected value> Artikel wählen </option>
         <option value="maskulin">
           Der
@@ -15,16 +15,16 @@
       </select>
     </div> 
   <div id="german-div" class="label-input-div">
-    <label for="german">Deutsches Wort:</label>
-    <input type="text" id="german">
+    <label for="germanNom">Deutsches Wort:</label>
+    <input type="text" id="germanNom">
   </div>
   <div id="otherLang-div" class="label-input-div">
-    <label for="otherLang">Übersetzung:</label>
-    <input type="text" id="otherLang">
+    <label for="otherLangNom">Übersetzung:</label>
+    <input type="text" id="otherLangNom">
   </div>
   <div id="category-div" class="label-input-div">
-    <label for="category">Kategorie:</label>
-    <select id="category">
+    <label for="categoryNom">Kategorie:</label>
+    <select id="categoryNom">
       <option disabled selected value> Kategorie wählen </option>
       <option *ngFor="let category of categories| keys"
           [value]="category.value.name">
@@ -34,6 +34,6 @@
   </div>
   <div id="submit-div" class="label-input-div">
     <label for="submit"></label>
-    <input type="submit" id="submit" value="Absenden">
+    <input type="submit" id="submit" value="Absenden" (click)="submit()">
   </div>
 </form>

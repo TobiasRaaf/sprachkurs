@@ -40,4 +40,15 @@ export class PrepositionComponent implements OnInit {
       label.classList.add("checked");
     }
   }
+  submit(): void {
+    var withCase = (<HTMLCollectionOf<HTMLLabelElement>>document.getElementsByClassName("checked"))
+    var caseString = "";
+    var i;
+    for (i=0; i<withCase.length; i++){
+      if(!caseString.includes(withCase.item(i).innerText){
+        caseString = caseString.concat(withCase.item(i).innerText);
+      }
+    }
+		this.entryService.submit("Pre", "preposition", caseString);
+	}
 }

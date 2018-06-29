@@ -27,16 +27,16 @@
     </div>
   </div>
   <div id="german-div" class="label-input-div">
-    <label for="german">Deutsches Wort:</label>
-    <input type="text" id="german">
+    <label for="germanPre">Deutsches Wort:</label>
+    <input type="text" id="germanPre">
   </div>
   <div id="otherLang-div" class="label-input-div">
-    <label for="otherLang">Übersetzung:</label>
-    <input type="text" id="otherLang">
+    <label for="otherLangPre">Übersetzung:</label>
+    <input type="text" id="otherLangPre">
   </div>
   <div id="category-div" class="label-input-div">
-    <label for="category">Kategorie:</label>
-    <select id="category">
+    <label for="categoryPre">Kategorie:</label>
+    <select id="categoryPre">
       <option disabled selected value> Kategorie wählen </option>
       <option *ngFor="let category of categories| keys"
         [value]="category.value.name">
@@ -46,6 +46,6 @@
   </div>
   <div id="submit-div" class="label-input-div">
     <label for="submit"></label>
-    <input type="submit" id="submit" value="Absenden">
+    <input type="submit" id="submit" value="Absenden" (click)="submit()">
   </div>
 </form>

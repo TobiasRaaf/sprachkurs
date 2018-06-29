@@ -31,4 +31,8 @@ export class NomenComponent implements OnInit {
 		.subscribe(categories => this.categories = categories);
 	};
 
+	submit(): void {
+		var genus = (<HTMLSelectElement>document.getElementById("genusNom")).value;
+		this.entryService.submit("Nom", "nomen", genus);
+	}
 }

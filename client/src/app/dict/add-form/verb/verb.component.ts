@@ -29,4 +29,9 @@ export class VerbComponent implements OnInit {
 		this.entryService.getCategories()
 		.subscribe(categories => this.categories = categories);
 	};
+	
+	submit(): void {
+		var verbType = (<HTMLSelectElement>document.getElementById("verbtype")).value;
+		this.entryService.submit("Ver", "verb", verbType);
+	}
 }

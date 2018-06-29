@@ -30,4 +30,7 @@ export class OthersComponent implements OnInit {
 		.subscribe(categories => this.categories = categories);
 	};
 
+	submit(): void {
+		this.entryService.submit("Oth", null, null);
+	}
 }

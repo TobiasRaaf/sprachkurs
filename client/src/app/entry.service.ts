@@ -34,7 +34,7 @@ export class EntryService {
       xhr.open('POST', this.entrySaveUrl+'?german='+german+'&otherLang='+otherLang+'&categoryName='+category);
     }
     else{
-      xhr.open('POST', this.entrySaveUrl+'?german='+german+'&otherLang='+otherLang+'&categoryName='+category+'&'+type+'='+optional)
+      xhr.open('POST', this.entrySaveUrl+'?german='+german+'&otherLang='+otherLang+'&categoryName='+category+'&type='+type+'&optional='+optional)
     }
     xhr.withCredentials = true;
     xhr.onload = function(){

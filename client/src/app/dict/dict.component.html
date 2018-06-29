@@ -7,8 +7,9 @@
 				<p class="voc-header">Deutsch - Englisch</p>
 				<ng-container *ngFor="let entry of entries| keys">
 				<p *ngIf="(category.value.name==entry.value.category.name)">
-					{{entry.value.german}} - {{entry.value.otherLang}}
+					{{entry.value.german}} - {{entry.value.otherLang}} 
 				</p>
+				<img src="/assets/img/delete.png" alt="Löschen" class="delete-entry-button" (click)="deleteEntry(entry.value.german);">
 				</ng-container>
 			</div>
 		</li>

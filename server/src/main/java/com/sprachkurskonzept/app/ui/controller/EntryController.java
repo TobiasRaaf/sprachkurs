@@ -67,4 +67,12 @@ public class EntryController {
     public @ResponseBody Entry findByOtherLang(@RequestParam String otherLang) {
         return entryRepository.findByOtherLang(otherLang);
     }
+
+    @RequestMapping(path="/deleteEntry")
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+    public String deleteEntry(@RequestParam String german){
+        entryRepository.delete(findByGerman(german));
+        return "Die Vokabel "+german+ " wurde gelöscht";
+
+    }
 }

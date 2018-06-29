@@ -15,6 +15,7 @@ export class EntryService {
   private categoriesUrl = "http://localhost:8080/db/allCategories";
   private entrySaveUrl = "http://localhost:8080/db/addEntry";
   private categorySaveUrl= "http://localhost:8080/db/addCategory";
+  private entryDeleteUrl= "http://localhost:8080/db/deleteEntry";
 
   constructor( private http: HttpClient ) { }
 
@@ -51,6 +52,18 @@ export class EntryService {
     var categoryName = (<HTMLInputElement>document.getElementById("categoryName")).value;
     var xhr = new XMLHttpRequest();
     xhr.open('POST', this.categorySaveUrl+'?name='+categoryName);
+    xhr.withCredentials = true;
+    xhr.onload = function(){
+      if (xhr.status === 200){
+      }
+      else {
+      }
+    };
+    xhr.send();
+  }
+  deleteEntry(german) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', this.entryDeleteUrl+'?german='+german);
     xhr.withCredentials = true;
     xhr.onload = function(){
       if (xhr.status === 200){

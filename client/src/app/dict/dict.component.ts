@@ -72,4 +72,9 @@ export class DictComponent implements OnInit {
 		document.getElementById(sectionName+"-form").style.display = "block";
 		document.getElementById(sectionName+"-button").classList.add("active");
 	}
+
+	deleteEntry(german){
+		this.entryService.deleteEntry(german);
+		this.ngOnInit();
+	}
 }

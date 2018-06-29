@@ -8,7 +8,9 @@ import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
 	{ path:'', redirectTo: '/dashboard', pathMatch: 'full' },
-	{ path:'dict', component: DictComponent },
+	{ path:'dict', 
+		component: DictComponent,
+		runGuardsAndResolvers: 'always' },
 	{ path:'dashboard', component: DashboardComponent },
 	{ path:'test', component: TestComponent },
 	{ path:'materials', component: MaterialsComponent },
@@ -16,7 +18,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-	imports: [ RouterModule.forRoot(routes) ],
+	imports: [ RouterModule.forRoot(routes, {onSameUrlNavigation:"reload"}) ],
 	exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

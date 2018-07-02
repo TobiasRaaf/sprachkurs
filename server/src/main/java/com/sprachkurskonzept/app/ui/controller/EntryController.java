@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping(path="/db")
 public class EntryController {
@@ -62,17 +64,24 @@ public class EntryController {
     public @ResponseBody Entry findByGerman(@RequestParam String german) {
         return entryRepository.findByGerman(german);
     }
+
     @GetMapping(path="/findOtherLang")
     @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     public @ResponseBody Entry findByOtherLang(@RequestParam String otherLang) {
         return entryRepository.findByOtherLang(otherLang);
     }
 
+    @GetMapping(path="/findCategory")
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+    public @ResponseBody List<Entry> findByCategory(@RequestParam Category category) {
+        return entryRepository.findByCategory(category);
+    }
+
+
     @RequestMapping(path="/deleteEntry")
     @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     public String deleteEntry(@RequestParam String german){
         entryRepository.delete(findByGerman(german));
         return "Die Vokabel "+german+ " wurde gelöscht";
-
     }
 }

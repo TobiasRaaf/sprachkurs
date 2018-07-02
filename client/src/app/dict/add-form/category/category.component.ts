@@ -14,7 +14,7 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitCategory() {
+  submit() {
     this.entryService.submitCategory();
   }
 }

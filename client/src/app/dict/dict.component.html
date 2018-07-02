@@ -3,6 +3,7 @@
 	<ul>
 		<li *ngFor="let category of categories| keys; let i = index">
 			<button class="categories" (click)="hideShow(i);">{{category.value.name}}</button>
+			<img src="/assets/img/delete.png" alt="Löschen" class="delete-category-button" (click)="deleteCategory(category.value.name);">
 			<div class="cat-content">		
 				<p class="voc-header">Deutsch - Englisch</p>
 				<ng-container *ngFor="let entry of entries| keys">

@@ -45,7 +45,7 @@ export class PrepositionComponent implements OnInit {
     var caseString = "";
     var i;
     for (i=0; i<withCase.length; i++){
-      if(!caseString.includes(withCase.item(i).innerText){
+      if(!caseString.includes(withCase.item(i).innerText)){
         caseString = caseString.concat(withCase.item(i).innerText);
       }
     }

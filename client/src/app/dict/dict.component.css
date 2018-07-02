@@ -110,3 +110,11 @@ ul {
 #close-overlay:hover {
 	background-color: #DDDDDD;
 }
+.delete-entry-button {
+	width: 50px;
+	height: 50px;
+}
+.delete-category-button {
+	width: 50px;
+	height: 50px;
+}

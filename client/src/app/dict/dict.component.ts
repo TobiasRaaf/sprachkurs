@@ -38,7 +38,7 @@ export class DictComponent implements OnInit {
 	hideShow(i: number) {
 		var element = document.getElementsByClassName("categories")[i];
 		element.classList.toggle("active");
-		var content = element.nextElementSibling as HTMLElement;
+		var content = element.nextElementSibling.nextElementSibling as HTMLElement;
 		if(content.style.display === "block"){
 			content.style.display = "none";
 		}
@@ -76,5 +76,9 @@ export class DictComponent implements OnInit {
 	deleteEntry(german){
 		this.entryService.deleteEntry(german);
 		this.ngOnInit();
+	}
+
+	deleteCategory(name){
+		this.entryService.deleteCategory(name);
 	}
 }

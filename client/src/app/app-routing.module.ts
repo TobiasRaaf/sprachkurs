@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TestComponent } from './test/test.component';
 import { MaterialsComponent } from './materials/materials.component';
 import { AccountComponent } from './account/account.component';
+import { VocabularyComponent } from './test/vocabulary/vocabulary.component';
 
 const routes: Routes = [
 	{ path:'', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
 	{ path:'dashboard', component: DashboardComponent },
 	{ path:'test', component: TestComponent },
 	{ path:'materials', component: MaterialsComponent },
-	{ path:'account', component: AccountComponent }
+	{ path:'account', component: AccountComponent },
+	{ path:'test/vocabulary', component: VocabularyComponent}
 ]
 
 @NgModule({

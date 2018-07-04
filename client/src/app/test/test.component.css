@@ -1,0 +1,34 @@
+ul{
+    height:300px;
+}
+li {
+    list-style: none;
+    font-size: 250%;
+    display: inline-block;
+    height:100%;
+    width: 20%;
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+.voc-tile {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 7em;
+}
+#voc-category{
+    background-color: #026db2;
+}
+#voc-type{
+    background-color: #f58025;
+}
+#voc-latest{
+    background-color: #9b599a;
+}

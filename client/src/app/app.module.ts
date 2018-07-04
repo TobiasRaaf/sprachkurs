@@ -19,6 +19,7 @@ import { AdjectiveComponent } from './dict/add-form/adjective/adjective.componen
 import { OthersComponent } from './dict/add-form/others/others.component';
 import { KeysPipe } from './dict/entry.pipe';
 import { CategoryComponent } from './dict/add-form/category/category.component';
+import { VocabularyComponent } from './test/vocabulary/vocabulary.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CategoryComponent } from './dict/add-form/category/category.component';
     AdjectiveComponent,
     OthersComponent,
     KeysPipe,
-    CategoryComponent
+    CategoryComponent,
+    VocabularyComponent,
   ],
   imports: [
     HttpClientModule,

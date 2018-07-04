@@ -84,16 +84,16 @@ export class DictComponent implements OnInit {
 		this.ngOnInit();
 	};
 
-	searchEntries() {
-		var filter = (<HTMLInputElement>document.getElementById("searchInput")).innerText;
-		var entries = (<HTMLCollectionOf<HTMLParagraphElement>>document.getElementsByTagName("p"))
+	searchEntries(){
+		var filter = (<HTMLInputElement>document.getElementById("searchInput")).value;
+		var entries = (<HTMLCollectionOf<HTMLParagraphElement>>document.getElementsByClassName("entry"));
 		var i;
 		for(i=0; i<entries.length; i++){
-			if(entries.item(i).innerText.indexOf(filter)){
-
+			if(entries.item(i).innerText.toLowerCase().indexOf(filter.toLowerCase()) > -1){
+				entries.item(i).style.display="";
 			}
 			else{
-				entries.item(i).style.display="hidden";
+				entries.item(i).style.display="none";
 			}
 		}
 	};

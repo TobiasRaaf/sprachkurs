@@ -1,6 +1,6 @@
 <app-dashboard></app-dashboard>
 <div class="dict">
-	<input type="text" id="searchInput" onkeyup="searchEntries();" placeholder="Suche...">
+	<input type="text" id="searchInput" (keyup)="searchEntries();" placeholder="Suche...">
 	<ul>
 		<li *ngFor="let category of categories| keys; let i = index">
 			<button class="categories" (click)="hideShow(i);">{{category.value.name}}</button>
@@ -8,7 +8,7 @@
 			<div class="cat-content">		
 				<p class="voc-header">Deutsch - Englisch</p>
 				<ng-container *ngFor="let entry of entries| keys">
-				<p *ngIf="(category.value.name==entry.value.category.name)">
+				<p class="entry" *ngIf="(category.value.name==entry.value.category.name)">
 					{{entry.value.german}} - {{entry.value.otherLang}} 
 					<img src="/assets/img/delete.png" alt="Löschen" class="delete-entry-button" (click)="deleteEntry(entry.value.german);">
 				</p>

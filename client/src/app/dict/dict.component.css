@@ -41,6 +41,23 @@ ul {
 	font-size: 125%;
 }
 
+.delete-entry-button {
+	width: 50px;
+	height: 50px;
+}
+.delete-category-button {
+	width: 50px;
+	height: 50px;
+}
+#searchInput {
+	padding: 1%;
+	width: 60%;
+	font-size: 16px;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	border: 1px solid lightgray;
+}
+
 /*Styling of overlay*/
 
 #add-overlay-container {
@@ -109,12 +126,4 @@ ul {
 }
 #close-overlay:hover {
 	background-color: #DDDDDD;
-}
-.delete-entry-button {
-	width: 50px;
-	height: 50px;
-}
-.delete-category-button {
-	width: 50px;
-	height: 50px;
 }

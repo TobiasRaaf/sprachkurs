@@ -55,7 +55,8 @@ export class DictComponent implements OnInit {
 		else {
 			overlay.style.display = "none";
 		}
-	}
+	};
+
 	showRelevantForm(event, sectionName) {
 		var i, masks, sectionButtons;
 
@@ -71,14 +72,29 @@ export class DictComponent implements OnInit {
 
 		document.getElementById(sectionName+"-form").style.display = "block";
 		document.getElementById(sectionName+"-button").classList.add("active");
-	}
+	};
 
 	deleteEntry(german){
 		this.entryService.deleteEntry(german);
 		this.ngOnInit();
-	}
+	};
 
 	deleteCategory(name){
 		this.entryService.deleteCategory(name);
-	}
+		this.ngOnInit();
+	};
+
+	searchEntries() {
+		var filter = (<HTMLInputElement>document.getElementById("searchInput")).innerText;
+		var entries = (<HTMLCollectionOf<HTMLParagraphElement>>document.getElementsByTagName("p"))
+		var i;
+		for(i=0; i<entries.length; i++){
+			if(entries.item(i).innerText.indexOf(filter)){
+
+			}
+			else{
+				entries.item(i).style.display="hidden";
+			}
+		}
+	};
 }

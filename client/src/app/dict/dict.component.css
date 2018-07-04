@@ -25,7 +25,7 @@ ul {
 	color: #000000;
 }
 .categories.active {
-	margin-left: 2%;
+	margin-left: 1%;
 }
 .categories.active::after {
 	content: '\02212';
@@ -35,6 +35,7 @@ ul {
 .cat-content {
 	display: none;
 	overflow: hidden;
+	margin-left: 2%;
 }
 .voc-header {
 	font-weight: bold;
@@ -42,12 +43,14 @@ ul {
 }
 
 .delete-entry-button {
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
+	vertical-align: bottom;
 }
 .delete-category-button {
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
+	vertical-align: bottom;
 }
 #searchInput {
 	padding: 1%;

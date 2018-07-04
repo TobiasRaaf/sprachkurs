@@ -96,5 +96,40 @@ export class DictComponent implements OnInit {
 				entries.item(i).style.display="none";
 			}
 		}
+		this.checkIfShowCategory();
+		if(filter == ""){
+			this.showAllCategories();
+		}
 	};
+
+	checkIfShowCategory(){
+		var categories = (<HTMLCollectionOf<HTMLLIElement>>document.getElementsByTagName("li"));
+		var i;
+		for(i=0; i<categories.length; i++){
+			var currentCategoryEntries = categories.item(i).lastElementChild.childNodes;
+			var j;
+			var allHidden=true;
+			for(j=1; j<currentCategoryEntries.length; j++){
+				if(currentCategoryEntries.item(j) instanceof Element){
+					if((<HTMLElement>currentCategoryEntries.item(j)).style.display!="none"){
+						allHidden=false;
+					}
+				}
+			}
+			if(allHidden){
+				categories.item(i).style.display="none";
+			}
+			else{
+				categories.item(i).style.display="";
+			}
+		}
+	}
+
+	showAllCategories() {
+		var categories = (<HTMLCollectionOf<HTMLLIElement>>document.getElementsByTagName("li"));
+		var i;
+		for(i=0; i<categories.length; i++){
+			categories.item(i).style.display="";
+		}
+	}
 }
